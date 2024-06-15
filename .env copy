@@ -1,0 +1,7 @@
+PORT=3000
+DATABASE_URL="postgresql://postgres:password@localhost:5432/postgresSequalizeDemoDb"
+DB_USER=postgres
+DB_PASSWORD=passwrod
+DB_HOST=localhost
+DB_PORT=5432
+DB_NAME=postgresSequalizeDemoDb
