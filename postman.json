@@ -1,168 +1,232 @@
 {
-	"info": {
-		"_postman_id": "ad596949-998a-4eb7-ab20-457498582236",
-		"name": "postgres-sequelize-demo",
-		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
-		"_exporter_id": "30661629"
-	},
-	"item": [
-		{
-			"name": "Users",
-			"item": [
-				{
-					"name": "Create User",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n  \"name\": \"John Doe\",\n  \"email\": \"john.doe@example.com\",\n  \"addressId\": 1\n}"
-						},
-						"url": "{{base_url}}/users"
-					},
-					"response": []
-				},
-				{
-					"name": "Update User",
-					"request": {
-						"method": "PUT",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n  \"name\": \"Jane Doe\",\n  \"email\": \"jane.doe@example.com\",\n  \"addressId\": 2\n}"
-						},
-						"url": "{{base_url}}/users/1"
-					},
-					"response": []
-				},
-				{
-					"name": "Delete User",
-					"request": {
-						"method": "DELETE",
-						"header": [],
-						"url": "{{base_url}}/users/1"
-					},
-					"response": []
-				},
-				{
-					"name": "Get All Users",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": "{{base_url}}/users"
-					},
-					"response": []
-				},
-				{
-					"name": "Get User by ID",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": "{{base_url}}/users/1"
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "Addresses",
-			"item": [
-				{
-					"name": "Create Address",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n  \"street\": \"123 Main St\",\n  \"city\": \"Springfield\",\n  \"state\": \"IL\",\n  \"zip\": \"62704\",\n  \"type\": \"Home\",\n  \"address1\": \"Apartment 4B\"\n}"
-						},
-						"url": "{{base_url}}/addresses"
-					},
-					"response": []
-				},
-				{
-					"name": "Update Address",
-					"request": {
-						"method": "PUT",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n  \"street\": \"456 Elm St\",\n  \"city\": \"Shelbyville\",\n  \"state\": \"IL\",\n  \"zip\": \"62565\",\n  \"type\": \"Office\",\n  \"address1\": \"Suite 200\"\n}"
-						},
-						"url": "{{base_url}}/addresses/1"
-					},
-					"response": []
-				},
-				{
-					"name": "Delete Address",
-					"request": {
-						"method": "DELETE",
-						"header": [],
-						"url": "{{base_url}}/addresses/1"
-					},
-					"response": []
-				},
-				{
-					"name": "Get All Addresses",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": "{{base_url}}/addresses"
-					},
-					"response": []
-				},
-				{
-					"name": "Get Address by ID",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": "{{base_url}}/addresses/1"
-					},
-					"response": []
-				}
-			]
-		}
-	],
-	"event": [
-		{
-			"listen": "prerequest",
-			"script": {
-				"type": "text/javascript",
-				"packages": {},
-				"exec": [
-					""
-				]
-			}
-		},
-		{
-			"listen": "test",
-			"script": {
-				"type": "text/javascript",
-				"packages": {},
-				"exec": [
-					""
-				]
-			}
-		}
-	]
+  "info": {
+    "_postman_id": "ad596949-998a-4eb7-ab20-457498582236",
+    "name": "postgres-sequelize-demo",
+    "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+    "_exporter_id": "30661629"
+  },
+  "item": [
+    {
+      "name": "Company",
+      "item": [
+        {
+          "name": "Get All Companies",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{base_url}}/companies"
+          },
+          "response": []
+        },
+        {
+          "name": "Get Company by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{base_url}}/companies/1"
+          },
+          "response": []
+        },
+        {
+          "name": "Create Company",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"New Company\",\n  \"addressId\": 1\n}"
+            },
+            "url": "{{base_url}}/companies"
+          },
+          "response": []
+        },
+        {
+          "name": "Update Company",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Google India\",\n  \"addressId\": 1\n}"
+            },
+            "url": "{{base_url}}/companies/12"
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Company",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": "{{base_url}}/companies/11"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Users",
+      "item": [
+        {
+          "name": "Create User",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Rahul Dutta - 2\",\n  \"email\": \"john.doe.2@example.com\",\n  \"addressId\": 1,\n  \"companyId\": 1\n}"
+            },
+            "url": "{{base_url}}/users"
+          },
+          "response": []
+        },
+        {
+          "name": "Update User",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"Sourav Dutta\",\n    \"email\": \"sourav.dutta@gmail.com\",\n    \"addressId\": 2,\n    \"companyId\": 2\n}"
+            },
+            "url": "{{base_url}}/users/14"
+          },
+          "response": []
+        },
+        {
+          "name": "Delete User",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": "{{base_url}}/users/11"
+          },
+          "response": []
+        },
+        {
+          "name": "Get All Users",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{base_url}}/users"
+          },
+          "response": []
+        },
+        {
+          "name": "Get User by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{base_url}}/users/10"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Addresses",
+      "item": [
+        {
+          "name": "Create Address",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"street\": \"125, Abash\",\n  \"city\": \"Midnapore\",\n  \"state\": \"WB\",\n  \"zip\": \"721102\",\n  \"type\": \"Home\"\n}"
+            },
+            "url": "{{base_url}}/addresses"
+          },
+          "response": []
+        },
+        {
+          "name": "Update Address",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"street\": \"125, Abash\"\n}"
+            },
+            "url": "{{base_url}}/addresses/11"
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Address",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": "{{base_url}}/addresses/12"
+          },
+          "response": []
+        },
+        {
+          "name": "Get All Addresses",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{base_url}}/addresses"
+          },
+          "response": []
+        },
+        {
+          "name": "Get Address by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{base_url}}/addresses/1"
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "exec": [""]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "exec": [""]
+      }
+    }
+  ]
 }
