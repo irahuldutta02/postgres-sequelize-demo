@@ -10,7 +10,8 @@
     "dev": "nodemon node server.js",
     "start": "node server.js",
     "seedData": "node dbSeeder.js",
-    "clearData": "node dbCleaner.js"
+    "clearData": "node dbCleaner.js",
+    "dbDelete": "node dbDelete.js"
   },
   "dependencies": {
     "dotenv": "^16.4.5",

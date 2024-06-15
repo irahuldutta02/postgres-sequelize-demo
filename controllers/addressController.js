@@ -28,12 +28,12 @@ exports.updateAddress = async (req, res) => {
   try {
     const address = await Address.findByPk(id);
     if (address) {
-      address.street = street;
-      address.city = city;
-      address.state = state;
-      address.zip = zip;
-      address.type = type;
-      address.address1 = address1;
+      address.street = street || address.street;
+      address.city = city || address.city;
+      address.state = state || address.state;
+      address.zip = zip || address.zip;
+      address.type = type || address.type;
+      address.address1 = address1 || address.address1;
       await address.save();
       res.json(address);
     } else {
@@ -53,7 +53,7 @@ exports.deleteAddress = async (req, res) => {
     const address = await Address.findByPk(id);
     if (address) {
       await address.destroy();
-      res.json(address);
+      res.json({ message: "Address deleted" });
     } else {
       res.status(404).json({ error: "Address not found" });
     }
